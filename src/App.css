@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+body {
+  display: flex;
+  font-family: sans-serif;
+  overflow: hidden;
+  background: #222;
+  color: #aaa;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-flow: column;
+  position: relative;
+  max-width: 100vw;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+}
+.App h1, .App h2 {
+  margin: 1vh;
+  font-size: 2em;
+}
+.App h1 #topCard, .App h2 #topCard {
+  font-size: 2em;
+}
+.App h1 #topCard::before, .App h2 #topCard::before {
+  content: ": ";
+}
+.App h1 {
+  font-size: 3em;
+}
+.App .board {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  justify-self: center;
+  margin: 0 15vw;
+  position: relative;
+}
+.App .board div {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  height: 50%;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.App .board div span {
+  font-size: 2em;
+  padding: 5px 30px;
+  border: 1px solid saddlebrown;
+  border-radius: 50% 50%;
+}
+.App .gamelog {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  text-align: left;
+  align-items: center;
+  text-indent: 25px;
+  height: 100px;
+  width: 100%;
+  position: relative;
+}
+.App .gamelog span::after {
+  content: ",";
+}
+.App .gamelog span:last-child::after {
+  content: "";
+}
+.App .btn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: row;
+  height: 100px;
+  width: 100vw;
+  position: relative;
+}
+.App .btn button {
+  cursor: pointer;
+  padding: 20px 30px;
+  font-weight: bold;
+  background: cyan;
+  font-size: 2em;
+  border-radius: 10px;
+}
+.App .btn button.hide {
+  visibility: hidden;
+}
+.App .btn button[type=reset] {
+  background: coral;
+}/*# sourceMappingURL=App.css.map */
