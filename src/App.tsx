@@ -5,7 +5,7 @@ import './App.css'
 function App() {
   const startNum = 3
   const numOfCard = 33
-  const leftCard = 3
+  const leftCard = 9
   const [arr, setArr] = useState(localStorage.getItem(`cardOnBoard`)?.split(',').map(x=> parseInt(x)) || [...Array(numOfCard).keys()].map(i => i+startNum))
   const [topCard, setTopCard] = useState(localStorage.getItem(`topCard`) || '')
   const [gameLog, setGameLog] = useState(localStorage.getItem(`gameLog`)?.split(',') || '')
@@ -53,7 +53,7 @@ function App() {
           return <span id='topCardLetter'>{l}</span>
         })}</span></h2>
         : 
-        ''
+        <h2>Click Open a Card to Start</h2>
       }
         <div className="board">
           <div>
@@ -63,7 +63,7 @@ function App() {
           </div>
         </div>
         <div className="gamelog">
-          { gameLog && gameLog.length !== 0 ? `Game Log :` : `` }
+          { gameLog && gameLog.length !== 0 ? `Game Log :` : `Game Log Display Here` }
           {
             [...gameLog].map((element) => {
               return <span key={element}>{element}</span>
@@ -72,8 +72,8 @@ function App() {
           {/* {gameLog ?? gameLog.join(',')} */}
         </div>
         <div className="btn">
-            <button className={arr.length > leftCard ? '' : `hide`} onClick={draw}>Open a Card</button>
-            <button className={topCard ? `` : `hide`} type='reset' onClick={reset}>Reset</button>
+            <button disabled={arr.length <= leftCard} onClick={draw}>Open a Card</button>
+            <button disabled={!topCard} type='reset' onClick={reset}>Reset</button>
         </div>
     </div>
   )

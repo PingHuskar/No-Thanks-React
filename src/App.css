@@ -36,6 +36,9 @@ body {
 .App h1 #topCard::before, .App h2 #topCard::before {
   content: ": ";
 }
+.App h1 #topCard #topCardLetter, .App h2 #topCard #topCardLetter {
+  color: #fff;
+}
 .App h1 {
   font-size: 3em;
 }
@@ -58,9 +61,10 @@ body {
 }
 .App .board div span {
   font-size: 2em;
-  padding: 5px 30px;
-  border: 1px solid saddlebrown;
-  border-radius: 50% 50%;
+  padding: 5px 15px;
+  color: #ddd;
+  border: 1px solid salmon;
+  border-radius: 50%;
 }
 .App .gamelog {
   display: flex;
@@ -101,4 +105,8 @@ body {
 }
 .App .btn button[type=reset] {
   background: coral;
+}
+.App .btn button[disabled=disabled], .App .btn button:disabled {
+  opacity: 0.5;
+  cursor: default;
 }/*# sourceMappingURL=App.css.map */

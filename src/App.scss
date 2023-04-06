@@ -32,6 +32,9 @@ body {
             &::before {
                 content: ': ';
             }
+            #topCardLetter {
+                color: #fff;
+            }
         }
     }
     h1 {
@@ -54,9 +57,10 @@ body {
             position: relative;
             span {
                 font-size: 2em;
-                padding: 5px 30px;
-                border: 1px solid saddlebrown;
-                border-radius: 50% 50%;
+                padding: 5px 15px;
+                color: #ddd;
+                border: 1px solid salmon;
+                border-radius: 50%;
             }
         }
     }
@@ -101,6 +105,10 @@ body {
         }
         button[type=reset] {
             background: coral;
+        }
+        button[disabled=disabled], button:disabled {
+            opacity: 0.5;
+            cursor: default;
         }
     }
 }
